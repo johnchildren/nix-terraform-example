@@ -1,0 +1,25 @@
+name: Apply
+
+on:
+  push:
+    branches:
+      - 'master'
+
+jobs:
+  apply:
+
+    runs-on: ubuntu-latest
+    steps:
+    - name: 'Checkout repository'
+      uses: actions/checkout@v2
+
+    - name: 'Install Nix'
+      uses: cachix/install-nix-action@v10
+      with:
+        nix_path: ./nix
+
+    - name: 'Initialise terraform'
+      run: nix-shell shell.nix --run "terraform init"
+
+    - name: 'Apply a terraform deployment'
+      run: nix-shell shell.nix --run "terraform apply -auto-approve"
