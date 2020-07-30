@@ -1,9 +1,9 @@
-{ pkgs ? import ./nix {} }:
+{ pkgs ? import ./nix { } }:
 
-pkgs.mkShell {
+let
+  customTerraform =
+    pkgs.terraform.withPlugins (p: [ p.docker ]);
+in pkgs.mkShell {
   name = "terraform-dev-shell";
-  buildInputs = with pkgs; [
-    go
-    terraform
-  ];
+  buildInputs = [ customTerraform ];
 }
