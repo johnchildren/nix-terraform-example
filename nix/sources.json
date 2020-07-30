@@ -22,5 +22,18 @@
         "type": "tarball",
         "url": "https://github.com/NixOS/nixpkgs-channels/archive/289466dd6a11c65a7de4a954d6ebf66c1ad07652.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "terraform-provider-docker": {
+        "branch": "master",
+        "description": "Terraform Docker provider",
+        "homepage": "https://www.terraform.io/docs/providers/docker/",
+        "owner": "terraform-providers",
+        "repo": "terraform-provider-docker",
+        "rev": "63fd9dd5bd4345a49d0d7c215297a0852a456dc1",
+        "sha256": "11lj171cmiclc44107fyqwcla2zqfss3na5rdi3fkp07y8msnb57",
+        "type": "tarball",
+        "url": "https://github.com/terraform-providers/terraform-provider-docker/archive/63fd9dd5bd4345a49d0d7c215297a0852a456dc1.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
+        "version": "2.7.0"
     }
 }
